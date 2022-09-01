@@ -46,9 +46,7 @@ module GameLogic
 
   module Actions
     def clear_players_cards
-      [@dealer, @player].each do |player|
-        player.cards.clear
-      end
+      [@dealer, @player].each { |player| player.cards.clear }
     end
 
     def generate_starting_hands
@@ -60,9 +58,7 @@ module GameLogic
     end
 
     def make_bets
-      [@dealer, @player].each do |player|
-        @bank += player.take_bet
-      end
+      [@dealer, @player].each { |player| @bank += player.take_bet }
     end
 
     def user_choice(choice)
