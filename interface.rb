@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'user'
+require_relative 'player'
 require_relative 'dealer'
 require_relative 'deck'
 require_relative 'card'
@@ -11,7 +11,7 @@ class Interface
 
   def initialize
     @dealer = Dealer.new
-    @player = User.new(ask_name)
+    @player = Player.new(ask_name)
     @bank = 0
     @winner = nil
     start_game
