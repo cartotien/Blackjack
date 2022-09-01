@@ -10,6 +10,6 @@ class Card
   end
 
   def face
-    p suit + rank
+    suit + rank
   end
 end
