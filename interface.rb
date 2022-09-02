@@ -14,7 +14,6 @@ class Interface
     @dealer = Dealer.new
     @player = Player.new(ask_name)
     @account = Account.new
-    @winner = nil
     start_game
   end
 
@@ -29,6 +28,7 @@ class Interface
   end
 
   def new_game
+    @winner = nil
     clear_players_cards
     @deck = Deck.new.cards
     generate_starting_hands
@@ -44,6 +44,5 @@ class Interface
     show_player_cards(@dealer)
     endgame_conditions
     @account.send_money(@winner) if @winner
-    @winner = nil
   end
 end
