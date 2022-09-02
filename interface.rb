@@ -43,7 +43,7 @@ class Interface
     show_player_cards(@player)
     show_player_cards(@dealer)
     endgame_conditions
-    money_to_winner
+    @account.send_money(@winner) if @winner
     @winner = nil
   end
 end

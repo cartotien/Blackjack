@@ -73,11 +73,5 @@ module GameLogic
         @winner = 'dealer'
       end
     end
-
-    def money_to_winner
-      return unless @winner
-
-      @account.send_money(@winner)
-    end
   end
 end
