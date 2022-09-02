@@ -25,7 +25,6 @@ class Player
 
   def take_card(deck)
     @cards << deck.pop
-    @cards.flatten!
   end
 
   def over_21?
