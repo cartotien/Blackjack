@@ -29,6 +29,6 @@ class Player
   end
 
   def over_21?
-    card_value > 21
+    card_value > MAX_HAND_VALUE
   end
 end
