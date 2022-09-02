@@ -9,7 +9,15 @@ class Deck
     [11, 1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [10], [10], [10]
   ].freeze
 
-  def self.generate_deck
+  attr_reader :cards
+
+  def initialize
+    @cards = generate_deck
+  end
+
+  protected
+
+  def generate_deck
     deck = []
     SUITES.each do |suit|
       RANKS.each_with_index do |rank, index|

@@ -38,10 +38,6 @@ module GameLogic
     def draw
       (@player.card_value == @dealer.card_value) || (@player.over_21? && @dealer.over_21?)
     end
-
-    def broke_players?
-      @player.broke? || @dealer.broke?
-    end
   end
 
   module Actions
@@ -57,10 +53,6 @@ module GameLogic
       end
     end
 
-    def make_bets
-      [@dealer, @player].each { |player| @bank += player.take_bet }
-    end
-
     def user_choice(choice)
       case choice.downcase
       when 'take'
@@ -73,20 +65,19 @@ module GameLogic
     def endgame_conditions
       if player_won
         puts "#{@player.name}, you won!"
-        @winner = @player
+        @winner = 'player'
       elsif draw
         puts 'Draw'
       else
         puts 'You lost'
-        @winner = @dealer
+        @winner = 'dealer'
       end
     end
 
     def money_to_winner
       return unless @winner
 
-      @winner.bank += @bank
-      @bank = 0
+      @account.send_money(@winner)
     end
   end
 end
