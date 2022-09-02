@@ -10,7 +10,7 @@ module GameLogic
   module IO
     def ask_name
       puts 'Enter your name: '
-      gets.chomp
+      gets.chomp.upcase
     end
 
     def play_again
