@@ -17,7 +17,7 @@ class Interface
     start_game
   end
 
-  STOP_WORDS = %w[stop no exit].freeze
+  STOP_WORDS = %w[stop no exit nah].freeze
 
   protected
 
