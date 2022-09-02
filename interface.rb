@@ -33,8 +33,7 @@ class Interface
     generate_starting_hands
     make_bets
     show_player_cards(@player)
-    @dealer.make_move(@deck)
-    make_move
+    @dealer.make_move(@deck) unless make_move == 'show'
     endgame
     play_again
   end

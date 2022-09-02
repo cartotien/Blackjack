@@ -10,7 +10,7 @@ module GameLogic
   module IO
     def ask_name
       puts 'Enter your name: '
-      gets.chomp.upcase
+      gets.chomp.capitalize
     end
 
     def play_again
@@ -19,7 +19,7 @@ module GameLogic
     end
 
     def make_move
-      puts 'What is your plan? Take or Pass: '
+      puts 'What is your plan? Take, Pass or Show: '
       user_choice(gets.chomp)
     end
 
@@ -65,6 +65,8 @@ module GameLogic
       case choice.downcase
       when 'take'
         @player.take_card(@deck)
+      when 'show'
+        'show'
       end
     end
 
